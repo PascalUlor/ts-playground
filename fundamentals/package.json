@@ -1,0 +1,14 @@
+{
+  "name": "ts-playground",
+  "version": "1.0.0",
+  "description": "typescript",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "pascalulor",
+  "license": "ISC"
+}
