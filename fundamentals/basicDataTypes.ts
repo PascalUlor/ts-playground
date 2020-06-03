@@ -25,11 +25,12 @@ t= ["hello", 10]; // OK
 console.log(t[0].substring(2))
 
 // Enum is a way of giving more friendly names to sets of numeric values
+// Enum is a custome type
 enum Color {Red = 1, Green = 20, Blue = 10}
 let c: Color = Color.Green;
 console.log('Enum >>>', c)
 
-// Any
+// Any - the most flexible data type in typescript
 let notSure: any = 4;
 // notSure.ifItExists(); // okay, ifItExists might exist at runtime
 // notSure.toFixed(); // okay, toFixed exists (but the compiler doesn't check)
@@ -56,7 +57,8 @@ let n: null = null;
 console.log('undefined>>>>', decimal);
 
 /**
- * The never type represents the type of values that never occur
+ * The never type represents the type of values that never occur i.e
+ * it never returns or produces a value. it crashes the script
  */
 
  // Function returning never must have unreachable end point
@@ -115,3 +117,15 @@ let strLength: number = (<string>someValue).length;
 let someValue2: any = "this is a string";
 
 let strLength2: number = (someValue2 as string).length;
+
+//unknown - this is strictier than 'any' better than using 'any'
+let userInput: unknown;
+let userName: string;
+
+userInput = 5;
+userInput = 'Joe';
+// userName = userInput
+
+if(typeof userInput === 'string') {
+    userName = userInput
+}
