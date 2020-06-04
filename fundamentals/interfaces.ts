@@ -54,5 +54,12 @@ interface SquareConfig {
     width?: number;
     [propName: string]: any;
 }
-let obj: SquareConfig
-console.log(obj)
+type polygon = SquareConfig;
+let obj: SquareConfig = {color: 'green', width: 100, ['shape']: 'circle'}
+console.log('++++++++',obj)
+
+function areaPolygon (arg: polygon) {
+    return arg
+}
+
+console.log('>>>>', areaPolygon(obj))
