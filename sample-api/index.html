@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TypeScript</title>
+    <script src="https://unpkg.com/browse/systemjs@6.3.3/dist/system.js"></script>
+</head>
+<body>
+    <script>
+        System.config({
+            packages:{
+                "dist":{
+                    "defaultExtension": "js",
+                    "main":"main"
+                }
+            }
+        })
+
+        System.import("dist")
+    </script>
+    
+</body>
+</html>
