@@ -1,4 +1,28 @@
-const userDb: any[] = [
+interface User {
+    readonly id: number
+    fullName: string
+    email: string
+    userName: string
+    password: string
+}
+
+interface Business {
+    readonly id: number
+    businessName: string
+    email: string
+    category: string
+    location: string
+    Address: string
+    Details: string
+}
+
+interface Review {
+    readonly id: number
+    reviewDetail: string
+    userId: number,
+    businessId: number
+}
+const userDb: User[] = [
     {
         id: 1,
         fullName: 'Don Pascal',
@@ -15,7 +39,7 @@ const userDb: any[] = [
     }
 ];
 
-const businessData: any[] = [
+const businessData: Business[] = [
     {
         id: 1,
         businessName: 'SlimTrader',
@@ -36,7 +60,7 @@ const businessData: any[] = [
     }
 ];
 
-const reviewsData: any[] = [
+const reviewsData: Review[] = [
     {
         id: 1,
         reviewDetail: 'Quality',

@@ -1,6 +1,19 @@
 import db from '../data/testData';
 
 const { businessData } = db;
+interface Business {
+   readonly id: number
+   businessName: string
+   email: string
+   category: string
+   location: string
+   Address: string
+   Details: string
+}
+
+interface BusinessById {
+   [id: string] : Business
+}
 /**
  *
  *
@@ -15,10 +28,14 @@ export default class BusinessController {
  * @param {obj} res
  */
 
- static getBusiness(req, res) {
-    const { id } = req.params.id;
-    const byId = (stored: any, current: any) => ({...stored, [current.id]: current});
+ static getBusiness(req: any, res: any) {
+    const { id } = req.params;
+    const byId = (accumulator: BusinessById, current: Business) => ({...accumulator, [current.id.toString()]: current});
     const business = businessData.reduce(byId, {});
-    return business;
+   res.status(200).json({
+      status: 200,
+      message: 'Successfully retrieved a business',
+      data: business[id]
+   })
  }
 }

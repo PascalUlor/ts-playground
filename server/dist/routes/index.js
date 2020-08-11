@@ -6,5 +6,5 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const business_1 = __importDefault(require("../controllers/business"));
 const router = express_1.Router();
-router.route('/business').get(business_1.default.getBusiness);
+router.route('/business/:id').get(business_1.default.getBusiness);
 exports.default = router;

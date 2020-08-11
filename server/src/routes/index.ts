@@ -3,6 +3,6 @@ import BusinessController from '../controllers/business';
 
 const router = Router();
 
-router.route('/business').get(BusinessController.getBusiness);
+router.route('/business/:id').get(BusinessController.getBusiness);
 
 export default router;
