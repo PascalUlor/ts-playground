@@ -84,7 +84,7 @@ class AnimalP {
 
 class Cat extends AnimalP {
   age: string;
-  constructor(age: number) {
+  constructor(age: number, name) {
     super(name);
     this.age = name;
   }
