@@ -1,6 +1,12 @@
 import http from 'http';
 
-console.log('>>>>>> App running')
+import { Referrer } from './ref-json-schemas';
+
+const json = JSON.stringify(Referrer);
+
+console.log(json);
+
+// console.log('>>>>>> App running')
 const server = http.createServer((req, res) => {
     console.log('req url' + req.url)
     const headers = {
